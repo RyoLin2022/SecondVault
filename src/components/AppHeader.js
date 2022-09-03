@@ -19,11 +19,6 @@ import { AppBreadcrumb } from './index'
 let currentAccount = null
 const AppHeader = () => {
   const dispatch = useDispatch()
-  requestAccount()
-  useEffect(() => {
-    console.log('inside')
-    changingAccount()
-  })
 
   async function changingAccount() {
     if (window.ethereum) {
