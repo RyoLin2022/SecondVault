@@ -1,6 +1,5 @@
 import React, { Component, Suspense } from 'react'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-import DefaultLayout from './layout/DefaultLayout'
 import './scss/style.scss'
 
 const loading = (
@@ -10,7 +9,7 @@ const loading = (
 )
 
 // Containers
-// const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
+const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
 
 // Pages
 const Login = React.lazy(() => import('./views/pages/login/Login'))
