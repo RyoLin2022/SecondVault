@@ -1,0 +1,28 @@
+.sameRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.sameRowRight {
+    width: 150px;
+}
+
+#approve,
+#makeido,
+#makeclaim,
+#makecheck {
+    flex: 1;
+    margin-left: 50px;
+}
+
+@media screen and (max-width:960px) {
+    .sameRowRight {
+        width: 150px;
+    }
+    #approve,
+    #makeido,
+    #makeclaim {
+        flex: 1;
+        margin-left: 10px;
+    }
+}
