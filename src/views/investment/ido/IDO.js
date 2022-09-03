@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CRow, CCard, CCardHeader, CCardBody, CButton, CCol } from '@coreui/react'
 import './IDO.css'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
-let currentAccount = sessionStorage.getItem('Account')
+let currentAccount = localStorage.getItem('Account')
 let accAllowance = Number(0)
 const IDO = () => {
   const [copied, setCopied] = useState(false)
@@ -20,7 +20,7 @@ const IDO = () => {
     seeRef()
   }
   async function makeCheck() {
-    currentAccount = sessionStorage.getItem('Account')
+    currentAccount = localStorage.getItem('Account')
     console.log(currentAccount)
     if (currentAccount === null) {
       alert('no account detected, please connect your wallet again')
@@ -34,7 +34,7 @@ const IDO = () => {
   /*------------------Here's the token Approval-----------------*/
   /*------------------Here's the token Approval-----------------*/
   async function ApproveToken() {
-    currentAccount = sessionStorage.getItem('Account')
+    currentAccount = localStorage.getItem('Account')
     CheckApproval()
     if (currentAccount === null) {
       alert('no account detected!!')
@@ -87,7 +87,7 @@ const IDO = () => {
   /*------------------Checck the allowance for IDO contract-----------------*/
   /*------------------Checck the allowance for IDO contract-----------------*/
   async function CheckApproval() {
-    currentAccount = sessionStorage.getItem('Account')
+    currentAccount = localStorage.getItem('Account')
     console.log('Checking Approval' + accAllowance)
     let inputdata =
       '0xdd62ed3e' +
@@ -120,7 +120,7 @@ const IDO = () => {
     }
   }
   async function seeRef() {
-    let RefAddr = sessionStorage.getItem('RefAccount')
+    let RefAddr = localStorage.getItem('RefAccount')
     console.log('seeRef : ' + RefAddr)
   }
   async function GenerateLink() {
@@ -139,10 +139,10 @@ const IDO = () => {
     } else {
       refAccount = '0x0000000000000000000000000000000000000000'
     }
-    sessionStorage.setItem('RefAccount', refAccount)
+    localStorage.setItem('RefAccount', refAccount)
   }
   async function makeIDO() {
-    currentAccount = sessionStorage.getItem('Account')
+    currentAccount = localStorage.getItem('Account')
     accAllowance = parseInt(accAllowance)
     CheckApproval()
     console.log(accAllowance)
